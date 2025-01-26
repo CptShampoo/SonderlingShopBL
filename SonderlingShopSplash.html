@@ -11,15 +11,6 @@
             margin: 20px;
             background-color: #666666; /* Dunklerer Hintergrund */
             color: #333;
-        }
-           video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Verschiebt das Video um 50% seiner Größe */
-            width: 640px; /* Breite des Videos */
-            height: 360px; /* Höhe des Videos */
-        }
 
         .content {
             display: none; /* Anfangszustand: ausgeblendet */
@@ -132,6 +123,15 @@
             margin: 1px 0;
             height: 5px;
             background-color: #a2adab; /* Farbe */
+        }
+            /* Video am unteren Rand */
+        video {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 640px;
+            height: 360px;
         }
 
    
@@ -276,6 +276,11 @@
         <p><strong>* Shipping takes place after receipt of payment *</strong></p>
         
     </div>
+    <!-- Video am unteren Rand -->
+    <video autoplay loop muted>
+        <source src="Video/sonderlingroom.mp4" type="video/mp4">
+        Ihr Browser unterstützt das Video-Tag nicht.
+    </video>
 
     <script>
         function toggleContent(id) {
@@ -283,9 +288,5 @@
             content.style.display = content.style.display === 'none' ? 'block' : 'none';
         }
     </script>
-        <video width="640" height="360" autoplay loop muted>
-    <source src="Video/sonderlingroom.mp4" type="video/mp4">
-    Ihr Browser unterstützt das Video-Tag nicht.
-</video>
 </body>
 </html>
