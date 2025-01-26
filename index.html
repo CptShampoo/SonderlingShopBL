@@ -132,15 +132,15 @@
             background-color: #a2adab; /* Farbe */
         }
          /* Video am unteren Rand */
-        video {
-            width: 640px;
-            height: 360px;
-            margin-top: auto; /* Sorgt dafür, dass das Video immer am unteren Rand bleibt */
-            margin-bottom: 10px; /* Hier wird der Abstand nach dem Video festgelegt */
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+video {
+    width: 640px;
+    height: 360px;
+    position: absolute; /* Fixiert das Video */
+    bottom: 0; /* Positioniert das Video am unteren Rand */
+    left: 50%; /* Zentriert das Video horizontal */
+    transform: translateX(-50%); /* Korrigiert die horizontale Position */
+    margin-bottom: 40px; /* Abstand zum unteren Rand */
+}
     </style>
 </head>
 <body>
