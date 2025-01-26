@@ -94,13 +94,13 @@
         }
 
     </style>
-<script src="//cache.bricklink.info/vendor/iframeResizer.contentWindow.3.5.3.min.js"></script>
+    <script src="//cache.bricklink.info/vendor/iframeResizer.contentWindow.3.5.3.min.js"></script>
 </head>
 <body>
     
-    <!-- Bild nur im deutschen Teil eingefügt -->
+    <!-- Bild mit lokalem Pfad -->
     <div class="image-container">
-        <img alt="Lego Image" src="//github.com/CptShampoo/SonderlingShopBL/blob/main/img/sonderlingshoppic.png" />
+        <img alt="Lego Image" src="img/sonderlingshoppic.png" />
     </div>
     <p class="intro-text">
         <span>Hey! Mein Name ist Jean-Paul und ich betreibe diesen Shop.<br />
@@ -164,72 +164,6 @@
         <hr />
     </div>
 
-    <!-- Header Section (English Version) -->
-    <h1 class="header">
-        <strong><font style="font-size: 36.0px;">English Version</font></strong>
-    </h1>
-
-    <p class="intro-text">
-        <span>Hey! My name is Jean-Paul and I run this shop.<br />
-        Here you will find new as well as used LEGO pieces.<br />
-        And everything else related: Instructions, Sets, Minifigs.....</span>
-    </p>
-
-    <!-- Block 1: Condition New -->
-    <h2 onclick="toggleContent('contentNew')">What does the condition <u>NEW</u> mean to me?</h2>
-    <div class="content" id="contentNew">
-        <p>
-            The individual LEGO parts come from retail sets that I purchase, separate, and store in my small parts storage.
-        </p>
-        <p>
-            <strong>Attention!</strong> Sometimes LEGO packs certain parts poorly, and as a result, they may already have scratches.
-        </p>
-        <p class="small-note">
-            *I pack glass parts/front panels back into zip bags and store them separately.
-        </p>
-    </div>
-
-    <!-- Block 2: Condition Used -->
-    <h2 onclick="toggleContent('contentUsed')">What does the condition <u>USED</u> mean to me?</h2>
-    <div class="content" id="contentUsed">
-        <section>
-            <p>&lt;These LEGO parts come from bulk purchases I make&gt;</p>
-            <p>&lt;With the help of an ultrasonic cleaning device, I clean them using&nbsp;
-                <span style="font-size: 8.0px;">[distilled water + Fit]</span>&nbsp;&gt;
-            </p>
-            <p>&lt;I sort out defective, still dirty, or products from other manufacturers&gt;</p>
-            <p>&lt;They are then stored in my small parts storage for used LEGO&nbsp;
-                <span style="font-size: 8.0px;">[excluding electronic components or textiles]</span>&nbsp;&gt;
-            </p>
-            <ul>
-                <li>
-                    These LEGO parts come from different households and different years,
-                    so they may have more or fewer signs of use.
-                </li>
-                <li>
-                    Major damages, yellowing, or significant scratches are sorted out to the best of my ability.
-                </li>
-                <li>
-                    If defects are still present, I will mention them in the comments if applicable.
-                </li>
-            </ul>
-            <p><strong>Despite my best efforts, it may happen that I overlook something. Please keep this in mind.</strong></p>
-        </section>
-    </div>
-
-    <!-- Block 3: Shipping -->
-    <h2 onclick="toggleContent('shipping-content-en')">Shipping</h2>
-    <div class="content" id="shipping-content-en">
-        <p>I ship exclusively with Deutsche Post/DHL.</p>
-        <p><em>- always with tracking -</em></p>
-        <p>
-            I allow myself 1–3 working days for processing, depending on the volume of orders.<br />
-            However, orders are usually shipped on the same day.
-        </p>
-        <p><strong>* Orders are shipped after payment is received *</strong></p>
-        <hr />
-    </div>
-
     <script>
         function toggleContent(id) {
             const content = document.getElementById(id);
@@ -238,3 +172,4 @@
     </script>
 </body>
 </html>
+
