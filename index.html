@@ -5,69 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Textblock ein-/ausklappen</title>
     <style>
-        body {
+         body {
             font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #666666;
+            background-color: #666666; /* Dunklerer Hintergrund */
             color: #333;
+            height: 100vh; /* Stellt sicher, dass der Body die volle Höhe des Viewports hat */
+            display: flex; /* Flexbox aktivieren */
+            flex-direction: column; /* Inhalte in einer Spalte anordnen */
+            justify-content: flex-start; /* Das Video nach unten schieben */
         }
         .content {
-            display: none;
+            display: none; /* Anfangszustand: ausgeblendet */
             padding: 15px;
             border: 1px solid #ccc;
             margin-top: 10px;
-            background-color: #6e6565;
+            background-color: #6e6565; /* Dunklerer Grau-Hintergrund */
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            color: white;
-            text-align: center;
+            color: white; /* Texte in Weiß */
+            text-align: center; /* Zentriert den Text */
         }
+
         h2 {
-            cursor: pointer;
-            background-color: #6e6565;
-            color: white;
+            cursor: pointer; /* Zeigt an, dass das Element anklickbar ist */
+            background-color: #6e6565; /* Dunkleres Grau für h2 */
+            color: white; /* Weißer Text auf dunklem Hintergrund */
             padding: 10px;
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 
+                -1px -1px 0 black,
+                1px -1px 0 black,
+                -1px 1px 0 black,
+                1px 1px 0 black,
+                0px -1px 0 black,
+                0px 1px 0 black,
+                -1px 0px 0 black,
+                1px 0px 0 black;
         }
+
         h2:hover {
             background-color: #5c4d4d;
             text-decoration: underline;
         }
+
+        p, ul {
+            margin: 10px 0;
+        }
+
+        li {
+            text-align: center; /* Zentriert den Text */
+            margin: 5px 0;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column; /* Elemente untereinander */
+            align-items: center; /* Zentriert die <li> horizontal */
+            list-style: inside; /* Bulletpoints innerhalb der Liste */
+            padding: 0;
+        }
+
+        p.small-note, ul.small-note {
+            font-size: 0.8rem;
+            color: #ddd; /* Kleinere Hinweise in leichtem Grau */
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .header {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white; /* Setzt die Überschrift auf schwarz */
+        }
+
+        .header strong {
+            color: white; /* Überschrift in schwarz */
+        }
+
         .intro-text {
             text-align: center;
-            font-size: 14px;
+            font-size: 14px; /* Etwas größere Schrift */
+            font-family: Arial, Helvetica, sans-serif;
             padding: 20px;
             margin-top: 10px;
-            background-color: #a2adab;
+            background-color: #a2adab; /* Hintergrundfarbe geändert */
             border-radius: 8px;
-            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+            color: #333; /* Dunklere Schriftfarbe */
         }
+
+        .intro-text span {
+            font-size: 14px;
+        }
+
         .image-container {
             text-align: center;
             margin-top: 20px;
         }
+
         .image-container img {
-            max-width: 640px;
-            height: auto;
+            max-width: 100%; /* Bild passt sich der Breite des Containers an */
+            height: auto; /* Höhe wird automatisch angepasst */
+            max-width: 640px; /* Maximale Breite */
+            margin: 0 auto;
         }
+
         hr {
             border: none;
-            border-top: 1px dotted #a2adab;
+            border-top: 1px dotted #a2adab; /* Gepunktete obere Linie */
+            border-bottom: 1px dotted #a2adab; /* Gepunktete obere Linie */
+            height: 15px; /* Dicke der Linie */
+            background-color: #FFFFFF; /* Farbe */
+            border-radius: 5px; /* Abgerundete Enden */
             margin: 20px 0;
         }
+
+        .thin-line {
+            border: none;
+            margin: 1px 0;
+            height: 5px;
+            background-color: #a2adab; /* Farbe */
+        }
+
         video {
+            width: 640px;
+            height: 360px;
+            margin-top: auto; /* Sorgt dafür, dass das Video immer am unteren Rand bleibt */
+            margin-bottom: 40px; /* Hier wird der Abstand nach dem Video festgelegt */
             display: block;
-            margin: 20px auto;
-            max-width: 640px;
-            height: auto;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 <body>
+    
     <!-- Bild mit lokalem Pfad -->
     <div class="image-container">
         <img alt="Lego Image" src="img/sonderlingshoppic.png" />
@@ -96,12 +173,31 @@
     <!-- Block 2: Zustand Gebraucht -->
     <h2 onclick="toggleContent('contentGebraucht')">Was bedeutet der Zustand <u>Gebraucht</u> bei mir?</h2>
     <div class="content" id="contentGebraucht">
-        <p>Diese Legoparts stammen aus Konvoluten, die ich aufkaufe und reinige.</p>
-        <p>Defekte oder andere Produkte sortiere ich aus.</p>
-        <ul>
-            <li>Teile können unterschiedliche Gebrauchsspuren aufweisen.</li>
-            <li>Vergilbte oder stark beschädigte Teile werden aussortiert.</li>
-        </ul>
+        <section>
+            <p>&lt;Diese Legoparts stammen aus Konvoluten, die ich aufkaufe&gt;</p>
+            <p>&lt;Mit Hilfe eines Ultraschallreinigungsgeräts reinige ich sie mit&nbsp;
+                <span style="font-size: 8.0px;">[destilliertem Wasser + Fit]</span>&nbsp;&gt;
+            </p>
+            <p>&lt;Defekte, noch verschmutzte oder Produkte anderer Hersteller sortiere ich aus&gt;</p>
+            <p>&lt;Anschließend wandern sie in meine Kleinteilmagazine für gebrauchtes Lego&nbsp;
+                <span style="font-size: 8.0px;">[ausgenommen elektronische Bauteile oder Textilien]</span>&nbsp;&gt;
+            </p>
+            <hr class="thin-line">
+            <br/>
+            <ul>
+                <li>
+                    Diese Legoparts stammen aus verschiedenen Haushalten und unterschiedlichen Jahrgängen,<br/>
+                    weshalb sie mal mehr und mal weniger Gebrauchspuren aufweisen können.
+                </li>
+                <li>
+                    Starke Beschädigungen, Vergilbungen oder erhebliche Kratzer werden nach bestem Gewissen aussortiert.
+                </li>
+                <li>
+                    Sollten dennoch Mängel vorhanden sein, beschreibe ich diese gegebenenfalls in den Bemerkungen.
+                </li>
+            </ul>
+            <p><strong>Trotz größter Sorgfalt kann es passieren, dass ich etwas übersehe. Bitte behaltet dies im Hinterkopf.</strong></p>
+        </section>
     </div>
 
     <!-- Block 3: Versand -->
@@ -119,7 +215,10 @@
     <hr />
 
     <!-- Header Section (English Version) -->
-    <h1 class="header">English Version</h1>
+    <h1 class="header">
+        <strong><font style="font-size: 36.0px;">English Version</font></strong>
+    </h1>
+
     <b><p class="intro-text">
         <span>Hey! My name is Jean-Paul and I run this shop.<br />
         Here you will find new as well as used LEGO pieces.<br />
@@ -143,11 +242,31 @@
     <!-- Block 2: Condition Used -->
     <h2 onclick="toggleContent('contentUsed')">What does the condition <u>USED</u> mean to me?</h2>
     <div class="content" id="contentUsed">
-        <p>These LEGO parts come from bulk purchases I make and clean carefully.</p>
-        <ul>
-            <li>Parts may show varying signs of use.</li>
-            <li>Yellowed or heavily damaged parts are sorted out.</li>
-        </ul>
+        <section>
+            <p>&lt;These LEGO parts come from bulk purchases I make&gt;</p>
+            <p>&lt;With the help of an ultrasonic cleaning device, I clean them using&nbsp;
+                <span style="font-size: 8.0px;">[distilled water + Fit]</span>&nbsp;&gt;
+            </p>
+            <p>&lt;I sort out defective, still dirty, or products from other manufacturers&gt;</p>
+            <p>&lt;They are then stored in my small parts storage for used LEGO&nbsp;
+                <span style="font-size: 8.0px;">[excluding electronic components or textiles]</span>&nbsp;&gt;
+            </p>
+            <hr class="thin-line">
+            <br/>
+            <ul>
+                <li>
+                    These LEGO parts come from different households and different years,<br/>
+                    so they may have more or fewer signs of use.
+                </li>
+                <li>
+                    Major damages, yellowing, or significant scratches are sorted out to the best of my ability.
+                </li>
+                <li>
+                    If defects are still present, I will mention them in the comments if applicable.
+                </li>
+            </ul>
+            <p><strong>Despite my best efforts, it may happen that I overlook something. Please keep this in mind.</strong></p>
+        </section>
     </div>
 
     <!-- Block 3: Shipping -->
@@ -162,7 +281,7 @@
         <p><strong>* Shipping takes place after receipt of payment *</strong></p>
     </div>
 
-    <!-- Video -->
+    <!-- Video am unteren Rand -->
     <video autoplay loop muted>
         <source src="Video/sonderlingroom.mp4" type="video/mp4">
         Ihr Browser unterstützt das Video-Tag nicht.
