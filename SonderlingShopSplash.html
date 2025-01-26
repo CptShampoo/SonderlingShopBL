@@ -37,7 +37,7 @@
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-              text-shadow: 
+            text-shadow: 
                 -1px -1px 0 black,
                 1px -1px 0 black,
                 -1px 1px 0 black,
@@ -61,7 +61,8 @@
             text-align: center; /* Zentriert den Text */
             margin: 5px 0;
         }
-         ul {
+
+        ul {
             display: flex;
             flex-direction: column; /* Elemente untereinander */
             align-items: center; /* Zentriert die <li> horizontal */
@@ -113,23 +114,24 @@
             max-width: 640px; /* Maximale Breite */
             margin: 0 auto;
         }
-     hr {
-    border: none;
-    border-top: 1px dotted #a2adab; /* Gepunktete obere Linie */
-    border-bottom: 1px dotted #a2adab; /* Gepunktete obere Linie */
-    height: 15px; /* Dicke der Linie */
-    background-color: #FFFFFF; /* Farbe */
-    border-radius: 5px; /* Abgerundete Enden */
-    margin: 20px 0;
-}
-                /* Dünne Linie */
+
+        hr {
+            border: none;
+            border-top: 1px dotted #a2adab; /* Gepunktete obere Linie */
+            border-bottom: 1px dotted #a2adab; /* Gepunktete obere Linie */
+            height: 15px; /* Dicke der Linie */
+            background-color: #FFFFFF; /* Farbe */
+            border-radius: 5px; /* Abgerundete Enden */
+            margin: 20px 0;
+        }
+
         .thin-line {
             border: none;
             margin: 1px 0;
             height: 5px;
             background-color: #a2adab; /* Farbe */
         }
-           /* Video am unteren Rand */
+
         video {
             width: 640px;
             height: 360px;
@@ -139,10 +141,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-
-   
     </style>
-    <script src="//cache.bricklink.info/vendor/iframeResizer.contentWindow.3.5.3.min.js"></script>
 </head>
 <body>
     
@@ -211,10 +210,10 @@
             In der Regel wird die Bestellung jedoch am gleichen Tag versandt.
         </p>
         <p><strong>* Versendet wird nach Eingang der Bezahlung *</strong></p>
-        
     </div>
 
-<hr />
+    <hr />
+
     <!-- Header Section (English Version) -->
     <h1 class="header">
         <strong><font style="font-size: 36.0px;">English Version</font></strong>
@@ -280,8 +279,8 @@
             However, orders are usually shipped on the same day.
         </p>
         <p><strong>* Shipping takes place after receipt of payment *</strong></p>
-        
     </div>
+
     <!-- Video am unteren Rand -->
     <video autoplay loop muted>
         <source src="Video/sonderlingroom.mp4" type="video/mp4">
@@ -291,7 +290,7 @@
     <script>
         function toggleContent(id) {
             const content = document.getElementById(id);
-            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'block' : 'none';
         }
     </script>
 </body>
